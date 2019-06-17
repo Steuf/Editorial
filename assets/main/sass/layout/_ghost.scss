@@ -10,7 +10,7 @@
     padding: 0;
     border: none;
     display: inline-flex;
-    height: 28px;
+    height: 50px;
 
     @include breakpoint('<=small') {
         display: flex;
@@ -20,7 +20,7 @@
 }
 
 #header .logo.image img {
-    height: 28px;
+    height: 50px;
     transform: none !important;
 }
 

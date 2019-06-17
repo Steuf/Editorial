@@ -80,6 +80,17 @@
 				padding: $pad;
 				width: calc(100% + #{$pad * 2});
 			}
+
+            ul.actions{
+                display: inline-block;
+                width: 100%;
+
+                li {
+                    display: block;
+                    float: left;
+                    margin-bottom: 1em;
+                }
+            }
 		}
 
 		.toggle {
