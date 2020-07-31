@@ -11,9 +11,8 @@ into the {body} of the default.hbs template --}}
             <div class="content">
                 <header>
                     <h1><a href="{{url}}">{{title}}</a></h1>
-                    {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{/if}}
                 </header>
-                {{content words="42"}}
+                {{#if custom_excerpt}}<p>{{custom_excerpt}}</p>{{else}}{{content words="42"}}{{/if}}
                 <ul class="actions">
                     <li><a href="{{url}}" class="button big">{{t "Learn More"}}</a></li>
                 </ul>
@@ -36,23 +35,18 @@ into the {body} of the default.hbs template --}}
     </header>
 
     <section class="posts">
-        {{#posts}}
-            {{#foreach posts}}
-                <article>
-                    {{#if feature_image}}
-                        <a href="{{url}}" class="image fit"><img src="{{img_url feature_image}}" alt="{{title}}" /></a>
-                    {{/if}}
-                    <h3><a href="{{url}}">{{title}}</a></h3>
-                    <p>{{excerpt words="33"}}</p>
-                    <ul class="actions special">
-                        <li><a href="{{url}}" class="button">{{t "Full Story"}}</a></li>
-                    </ul>
-                </article>
-            {{/foreach}}
-        {{/posts}}
-        {{^post}}
-            <article><p>{{t "No article at this time"}}</p></article>
-        {{/post}}
+    {{#foreach posts}}
+        <article>
+            {{#if feature_image}}
+                <a href="{{url}}" class="image fit"><img src="{{img_url feature_image}}" alt="{{title}}" /></a>
+            {{/if}}
+            <h3><a href="{{url}}">{{title}}</a></h3>
+            <p>{{excerpt words="33"}}</p>
+            <ul class="actions special">
+                <li><a href="{{url}}" class="button">{{t "Full Story"}}</a></li>
+            </ul>
+        </article>
+    {{/foreach}}
     </section>
 
 </section>
